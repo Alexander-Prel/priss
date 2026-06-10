@@ -3,22 +3,26 @@
 [Вернуться к мастер-документу](../docs/MLSD_Master_Document.md)
 
 ```mermaid
-flowchart LR
-    ING[Ingestion Component] --> PRE[Preprocessing Component]
-    PRE --> INF[Inference Component]
-    INF --> MQ[Moderation Queue Component]
-    MQ --> HR[Human Review Component]
-    HR --> FB[Feedback Component]
-    FB --> TR[Training Component]
-    TR --> INF
+flowchart TB
+    subgraph ONLINE[Online-компоненты]
+        direction LR
+        ING[Ingestion] --> PRE[Preprocessing]
+        PRE --> INF[Inference]
+        INF --> MQ[Moderation Queue]
+        MQ --> HR[Human Review]
+    end
 
-    ING --> MON[Monitoring Component]
-    PRE --> MON
-    INF --> MON
-    MQ --> MON
-    HR --> MON
-    FB --> MON
-    TR --> MON
+    subgraph LEARNING[Контур улучшения модели]
+        direction LR
+        FB[Feedback] --> TR[Training]
+    end
+
+    MON[Monitoring]
+
+    HR --> FB
+    TR --> INF
+    ONLINE -.-> MON
+    LEARNING -.-> MON
 ```
 
 | Компонент | Ответственность |
@@ -31,4 +35,3 @@ flowchart LR
 | Feedback Component | Сбор исправлений и оценка качества |
 | Monitoring Component | Технические и ML-метрики, алерты |
 | Training Component | Подготовка выборки, обучение и регистрация модели |
-

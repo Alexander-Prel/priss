@@ -5,7 +5,7 @@
 ## Команда
 
 - `Прель Александр` - Product Owner, Data Analyst
-- `Скоблилова Виктория ` - Data Scientist, ML Engineer
+- `Скоблилова Виктория` - Data Scientist, ML Engineer
 - `Биктагирова Зарина` - Software Architect, Data Engineer
 
 ## Документация
@@ -33,4 +33,3 @@
     ├── uml_components.md
     └── uml_sequence.md
 ```
-
