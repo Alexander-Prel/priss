@@ -4,9 +4,9 @@
 
 ## Команда
 
-- `<ФИО 1>` - Product Owner, Data Analyst
-- `<ФИО 2>` - Data Scientist, ML Engineer
-- `<ФИО 3>` - Software Architect, Data Engineer
+- `Прель Александр` - Product Owner, Data Analyst
+- `Скоблилова Виктория ` - Data Scientist, ML Engineer
+- `Биктагирова Зарина` - Software Architect, Data Engineer
 
 ## Документация
 
